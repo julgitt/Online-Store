@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    --primary-color: #606c38;
+    --primary-color-dark: #283618;
+    --highlight-color: #fefae0;
+    --secondary-color: #ECB677;
+    --secondary-color-dark: #674629;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color:var(--highlight-color);
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color:var(--highlight-color);
+}
+
+h3 {
+    font-size: 40px;
+    line-height: 46px;
+    color:var(--secondary-color-dark);
+}
+
+h4 {
+    font-size: 20px;
+    color: var(--highlight-color);
+}
+h6 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--highlight-color);
+}
+p {
+    font-size: 16px;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1{
+    margin: 40px 0;
+}
+
+.section-m1{
+    margin: 40px 0;
+}
+
+button.normal{
+    background-color: var(--secondary-color);
+    min-width: 130px;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+button.normal:hover{
+    background-color: var(--secondary-color-dark);
+    color: var(--highlight-color);
+}
+
+body{
+    width: 100%;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: var(--primary-color-dark);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999; 
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color:var(--secondary-color);
+    transition: 0.2s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active{
+    color:var(--secondary-color-dark);
+}
+
+#hero{
+    background-image: url("../img/plant-leaves.jpg");
+    height: 90vh;
+    width: 100%; 
+    background-size: cover;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero h4{
+    padding: 10px 0 20px 0;
+}
+
+#hero button:hover {
+    background-color: var(--secondary-color-dark);
+    color: var(--highlight-color);
+}
+
+#hero form{
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-color);
+}
+
+#hero form .form-title{
+    padding: 20px;
+}
+
+#hero form .form-input,
+#popup .form-input{
+    padding: 7px;
+    width: 300px;
+}
+
+#hero form .form-message-error{
+    color: rgb(166, 0, 0);
+    font-weight: 500;
+}
+
+#hero form .form-text .form-link{
+    color: var(--secondary-color);
+}
+
+.popup{
+    visibility: hidden;
+}
+
+.popup .popup-form{
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-color);
+    position: fixed;
+    top: 20%;
+    left: 35%;
+}
+
+#popup .button-row{
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.open-popup{
+    visibility: visible;
+}
+
+#banner{
+    background-image: url("../img/plant-leaves.jpg");
+    height: 30vh;
+    width: 100%; 
+    background-size: cover;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#banner h2{
+    color: var(--highlight-color);
+    padding: 20px;
+}
+
+#product1{
+    text-align: center;
+    justify-content: center;
+}
+
+#product1 h2{
+    color: var(--primary-color);
+    padding: 20px;
+}
+
+#product1 .product-container{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#product1 .product-add,
+#product1 .product{
+    width: 25%;
+    min-width: 250px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 15px, 0;
+    transition: 0.2s ease;
+    position: relative;
+
+}
+
+#product1 .product-add{
+    height: 400px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#product1 .product-add button{
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#product1 .product:hover,
+#product1 .product-add:hover{
+    box-shadow: 20px 20px 20px 20px rgba(0, 0, 0, 0.02);
+}
+
+#product1 .product img{
+    width: 100%;
+    background-color: white;
+}
+
+#product1 .product .desc{
+    background-color: white;
+}
+
+#product1 .product .desc h5{
+    font-size: 14px;
+    color: black;
+}
+
+#product1 .product .desc h4{
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    color: black;
+}
+
+#product1 .product-add .icon{
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 36px;
+    color: var(--secondary-color);
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+
+#product1 .product .icon{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+#product1 .product-add .icon:hover,
+#product1 .product .icon:hover{
+    border: none;
+    background-color: var(--secondary-color-dark);
+}
+
+#searchbar{
+    padding: 50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+#searchbar .search-wrapper{
+    padding: 20px;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+#searchbar .search-wrapper input{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 300px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#searchbar .search-wrapper i{
+    padding: 10px;
+}
+
+
+#cart table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table img{
+    width: 70%;
+}
+
+#cart table td{
+    text-align: center;
+}
+
+#cart table td:nth-child(1){
+    width: 100px;
+}
+
+#cart table td:nth-child(3){
+    width: 250px;
+}
+
+#cart table td:nth-child(2),
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(7){
+    width: 150px;
+}
+
+#cart table td:nth-child(6){
+    width: 10px;
+}
+
+#cart table td:nth-child(6) li{
+    list-style-type: none;
+}
+
+#cart table td:nth-child(6) a{
+    text-decoration: none;
+    color: black;
+}
+
+#cart table thead{
+    font-weight: 700;
+}
+
+#cart table tbody i{
+    color: var(--primary-color);
+}
+
+#cart table tbody tr td{
+    padding: 15px;
+}
+
+#cart-add{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+#subtotal{
+    width: 50%;   
+}
+
+#subtotal table{
+    border-collapse: collapse;
+    width:100%;
+    margin-bottom: 20px;
+}
+
+#subtotal table td{
+    width: 50%;
+    border: 1px solid var(--secondary-color);
+    padding: 15px;
+}
+
+#checkout{
+    padding: 50px;
+}
+
+#orders table{
+    width: 100%;
+    table-layout: fixed;
+    white-space: nowrap;
+    padding: 50px;
+}
+
+#orders table thead{
+    font-weight: 700;
+}
+
+
+#orders table td{
+    text-align: center;
+    padding: 20px;   
+}
+
+#orders table tbody tr td{
+    padding: 20px;
+    border-top: 1px solid var(--secondary-color);
+}
+
+#orders table td:first-child{
+    width: 30%;
+}
+
+#orders ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin: 10px;
+}
+
+#orders ul li{
+    width: 30%;
+    margin: 10px;
+}
+
+#orders img{
+    width: 30%;
+}
+
+#orders h5{
+    padding: 10px;
+}
+
+#users,
+#orders{
+    margin: 30px 50px;
+}
+
+#users table{
+    width: 100%;
+    table-layout: fixed;
+    white-space: nowrap;
+    padding: 50px;
+}
+
+#users table td{
+    text-align: center;
+    padding: 20px;
+    
+}
+
+#users table thead{
+    font-weight: 700;
+}
+
+#users table tbody tr td{
+    padding: 20px;
+    border-top: 1px solid var(--secondary-color);
+}

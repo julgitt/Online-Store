@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/b3099e8da9.js"></script>
+</head>
+
+<body>
+
+    <section id="header">
+        <a><h2 class="logo">Our Online Store</h2></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="shop">Shop</a></li>
+                <li><a class="active" href="login">Log In</a></li>
+                <li><a href="signup">Sign Up</a></li>
+                <li><a href="search"><i class="fa fa-search"></i></a></li>
+                <li><a href="cart"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="hero">
+        <form method="POST">
+            <h1 class="form-title">Log In</h1>
+            <% if ( locals.message ) { %>
+                <div class="form-message form-message-error">
+                <%= locals.message %>
+                </div>
+            <% } %>
+            <div class="form-input-group">
+                <input type="text" name="txtUser" class="form-input" autofocus placeholder="Username or email" required>
+            </div>
+            <div class="form-input-group">
+                <input type="password" name="txtPwd" class="form-input" autofocus placeholder="Password" required>
+            </div>
+            <button class="normal" type="submit">Log in</button>
+            <p class="form-text">
+                <a href="#" class="form-link">Forgot your password?</a>
+            </p>
+            <p class="form-text">
+                <a href="signup" class="form-link" id="linkCreateAccount">Don't have an account? Create account</a>
+            </p>
+        </form>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>

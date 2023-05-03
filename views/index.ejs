@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Our Online Store</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/b3099e8da9.js"></script>
+</head>
+
+<body>
+    <section id="header">
+        <% if ( locals.user ) { %>
+            <a><h2 class="logo">Hello, <%= user%></h2></a>
+        <% } else { %>
+            <a><h2 class="logo">Our Online Store</h2></a>
+        <% } %>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="/">Home</a></li>
+                <li><a href="shop">Shop</a></li>
+                <% if ( locals.user ) { %>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } else { %>
+                    <li><a href="login">Log In</a></li>
+                    <li><a href="signup">Sign Up</a></li>
+                <% } %>
+                <li><a href="search"><i class="fa fa-search"></i></a></li>
+                <li><a href="/cart"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="hero">
+        <h2>Welcome to</h2>
+        <h1>Our Online Store</h1>
+        <h4>Limited offer: Save up to 50%!</h4>
+        <a href="/shop"><button class="normal">Shop Now</button></a>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Featured products</h2>
+        <p>The most popular products among our clients</p>
+        <div class="product-container">
+            <%{for(var i = 0; i < 4; i++){%>
+                <div class="product">
+                    <img src="<%= elem[i].imagePath%>" alt="">
+                    <div class="desc">
+                        <h5><%= elem[i].productName%></h5>
+                        <h4>$<%= elem[i].price%></h4>
+                    </div>
+                    <% if ( locals.user ) { %>
+                        <a href="/cart/<%= elem[i].productId %>" class="fa fa-shopping-cart icon"></a>
+                    <% } else { %>
+                        <a href="login" class="fa fa-shopping-cart icon"></a>
+                    <% } %>
+                </div>
+            <%}} %>
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+</body>

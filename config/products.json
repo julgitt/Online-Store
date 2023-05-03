@@ -1,0 +1,98 @@
+[
+    {
+      "productId": "1",
+      "imagePath": "img/products/monstera-deliciosa.jpg",
+      "productName": "Monstera Deliciosa",
+      "price": "14.99"
+    },
+    {
+        "productId": "2",
+        "imagePath": "img/products/strelitzia.jpg",
+        "productName": "Sterlitzia",
+        "price": "7.99"
+    },
+    {
+        "productId": "3",
+        "imagePath": "img/products/yucca-elephantipes.jpg",
+        "productName": "Yucca Elephantipes",
+        "price": "9.99"
+    },
+    {
+        "productId": "4",
+        "imagePath": "img/products/himalayamix.jpeg",
+        "productName": "Himalaya",
+        "price": "5.99"
+    },
+    {
+        "productId": "5",
+        "imagePath": "img/products/hedera-helix.jpg",
+        "productName": "Hedera Helix",
+        "price": "4.99"
+    },
+    {
+        "productId": "6",
+        "imagePath": "img/products/palma-areka.jpg",
+        "productName": "Palma Areka",
+        "price": "34.99"
+    },
+    {
+        "productId": "7",
+        "imagePath": "img/products/chamaedorea-elegans.jpg",
+        "productName": "Chamaedorea Elegans",
+        "price": "3.99"
+    },
+    {
+        "productId": "8",
+        "imagePath": "img/products/schefflera-arboricola.jpg",
+        "productName": "Schefflera Arboricola",
+        "price": "19.99"
+    },
+    {
+        "productId": "9",
+        "imagePath": "img/products/ficus.jpg",
+        "productName": "Ficus",
+        "price": "14.99"
+    },
+    {
+        "productId": "10",
+        "imagePath": "img/products/aloe-vera.jpg",
+        "productName": "Aloe Vera",
+        "price": "3.99"
+    },
+    {
+        "productId": "11",
+        "imagePath": "img/products/clusia.jpg",
+        "productName": "Clusia",
+        "price": "6.99"
+    },
+    {
+        "productId": "12",
+        "imagePath": "img/products/monstera.jpg",
+        "productName": "Monstera",
+        "price": "24.99"
+    },
+    {
+        "productId": "13",
+        "imagePath": "img/products/spathiphyllum.jpg",
+        "productName": "Spathiphyllum",
+        "price": "4.99"
+    },
+    {
+        "productId": "14",
+        "imagePath": "img/products/ficus-lyrata-bambino.jpg",
+        "productName": "ficus Lyrata Bambino",
+        "price": "9.99"
+    },
+    {
+        "productId": "15",
+        "imagePath": "img/products/euphorbia-acrurensis.jpg",
+        "productName": "Euphorbia Acrurensis",
+        "price": "49.99"
+    },
+    {
+        "productId": "16",
+        "imagePath": "img/products/dracaena-marginata.jpg",
+        "productName": "Dracaena Marginata",
+        "price": "19.99"
+    }
+  ]

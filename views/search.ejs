@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Our Online Store</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/b3099e8da9.js"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a><h2 class="logo">Our Online Store</h2></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="shop">Shop</a></li>
+                <% if ( locals.user ) { %>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } else { %>
+                    <li><a href="login">Log In</a></li>
+                    <li><a href="signup">Sign Up</a></li>
+                <% } %>
+                <li><a class="active" href="search"><i class="fa fa-search"></i></a></li>
+                <li><a href="cart"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="banner">
+        <h2>Search products</h2>
+    </section>
+
+    <section id="searchbar" class="searchbar">
+        <div class="search-wrapper">
+            <i class="fa fa-search"></i>
+            <input type="search" id="search" name='search' placeholder="Search product" onkeyup="searchData(this)">
+        </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+        <div id="product-container" class="product-container">
+        </div>
+    </section>
+
+    <script>
+        function searchData(e){
+            const productcontainer = document.getElementById("product-container");
+            let match = e.value.match(/^[a-zA-Z ]*/);
+            let match2 = e.value.match(/\s*/);
+            if(match2[0] === e.value){
+                productcontainer.innerHTML = '';
+                return;
+            }
+            if(match[0] === e.value){
+                fetch('getProducts', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({payload: e.value})
+                }).then(res => res.json()).then(data => {
+                    let payload = data.payload;
+                    productcontainer.innerHTML = '';
+                    if(payload.length < 1){
+                        return;
+                    }
+                    payload.forEach((item, index) => {
+                        productcontainer.innerHTML += `<div class="product">
+                            <img src="${item.imagePath}" alt="">
+                            <div class="desc">
+                                <h5>${item.productName}</h5>
+                                <h4>$${item.price}</h4>
+                                </div>
+                                <a href="#" class="fa fa-shopping-cart cart"></a>
+                                </div>`
+                            });
+                        });
+                        return;
+                    }
+                    productcontainer.innerHTML = '';
+                }
+    </script>
+    <script src="./script.js"></script>
+</body>

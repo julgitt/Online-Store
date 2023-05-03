@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Our Online Store</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/b3099e8da9.js"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a><h2 class="logo">Our Online Store</h2></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="shop">Shop</a></li>
+                <% if ( locals.user ) { %>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } else { %>
+                    <li><a href="login">Log In</a></li>
+                    <li><a href="signup">Sign Up</a></li>
+                <% } %>
+                <li><a href="search"><i class="fa fa-search"></i></a></li>
+                <li><a class="active" href="cart"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="banner">
+        <h2>Your cart</h2>
+    </section>
+
+    <section id="cart" class="section-p1">
+        <% if (typeof cart !== "undefined") { %>    
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Image</td>
+                        <td>Product name</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td></td>
+                        <td>Subtotal</td>
+                    </tr>
+                    <tbody>
+                    <% var sum = 0 %>
+                    <%{for(var i = 0; i < cart.length; i++){%>
+                        <% var totalPrice = cart[i].price * cart[i].quantity %>
+                        <% sum += cart[i].price * cart[i].quantity %>
+                        <tr>
+                            <td><a href="cart/delete/<%= cart[i].productId %>"><i class="fa fa-times-circle"></i></a></i></td>
+                            <td><img src="<%= cart[i].image%>" alt=""></td>
+                            <td><%= cart[i].name%></td>
+                            <td>$<%= Number.parseFloat(cart[i].price).toFixed(2)%></td>
+                            <td><%= cart[i].quantity%></td>
+                            <td>
+                                <li><a href="cart/increment/<%= cart[i].productId %>">+</a></li>
+                                <li><a href="cart/decrement/<%= cart[i].productId %>">-</a></li>
+                            </td>
+                            <td>$<%= Number.parseFloat(totalPrice).toFixed(2) %></td>
+                        </tr>
+                    <% }}%>
+                    </tbody>
+                </thead>
+            </table>
+        </section>
+
+        <section id="cart-add" class="section-p1">
+            <div id="subtotal">
+                <table>
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        <td>$<%= Number.parseFloat(sum).toFixed(2) %></td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>$5.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>$<%= Number.parseFloat(sum + 5).toFixed(2)%></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="checkout">
+                <button class="normal"><a href="cart/order">Checkout</a></button>
+            </div>
+        <% }else{ %>
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Image</td>
+                        <td>Product name</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                    <tbody>
+
+                    </tbody>
+                </thead>
+            </table>
+        </section>
+
+            <section id="cart-add" class="section-p1">
+                <div id="subtotal">
+                    <table>
+                        <tr>
+                            <td>Cart Subtotal</td>
+                            <td>$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>$5.00</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>$5.00</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="checkout">
+                    <button class="normal"><a href="cart/order">Checkout</a></button>
+                </div>
+        <% } %>
+    </section>
+
+    <script src="./script.js"></script>
+</body>

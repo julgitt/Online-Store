@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Our Online Store</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/b3099e8da9.js"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a><h2 class="logo">Our Online Store</h2></a>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="admin_dashboard">Dashboard</a></li>
+                <li><a href="admin_shop">Shop</a></li>
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="banner">
+        <h2>Dashboard</h2>
+    </section>
+
+    <section id="users" class="section-p1">
+        <h3>Registered users</h3>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Username</td>
+                    <td>Email</td>
+                    <td>Roles</td>
+                </tr>
+                <tbody>
+                    <%{for(var i = 0; i < elem.length; i++){%>
+                        <tr>
+                            <td><%= elem[i].login%></td>
+                            <td><%= elem[i].email%></td>
+                            <td><%= elem[i].roles[1]%></td>
+                        </tr>
+                    <% }}%>
+                </tbody>
+            </thead>
+        </table>
+    </section>
+
+    <section id="orders" class="section-p1">
+        <h3>Active orders</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td>Username</td>
+                    <td>Orders</td>
+                </tr>
+                <tbody>
+                    <%{for(var i = 0; i < orders.length; i++){%>
+                        <tr>
+                            <td><%= orders[i].login%></td>
+                            <td>
+                                    <%{for(var j = 0; j < orders[i].order.length; j++){%>
+                                        <h5>Order number: <%= j + 1 %></h5>
+                                        <%{for(var k = 0; k < orders[i].order[j].length; k++){%>
+                                            <ul>
+                                                <li><img src="<%= orders[i].order[j][k].image%>" alt=""></li>
+                                                <li><%= orders[i].order[j][k].name%></li>
+                                                <li>$<%= Number.parseFloat(orders[i].order[j][k].price).toFixed(2)%></li>
+                                                <li><%= orders[i].order[j][k].quantity%></li>
+                                            </ul>
+                                        <% }}%>
+                                    <% }}%>
+                            </td>
+                        </tr>
+                    <% }}%>
+                </tbody>
+            </thead>
+        </table>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
