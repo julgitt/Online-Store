@@ -6,8 +6,8 @@
  - functionalities on the admin page (adding and removing products to the store page)
  
  ### Tools/languages used:
- - ejs
+ - EJS
  - CSS
- - JavaStript
+ - Node.js
  - Express
  - MongoDB
