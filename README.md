@@ -1,16 +1,13 @@
-## Wymagania funkcjonalne:
+## The project was carried out in a team of three as part of the course Selected Elements of Software Design Practice. 
 
-Użytkownik anonimowy (bez logowania):
-- [x] przeglądanie zawartości sklepu (towary)
-- [x] proste wyszukiwanie po nazwie/opisie towaru
-
-Użytkownik posiadający konto:
-- [x] utworzenie nowego konta (podanie loginu/hasła)
-- [x] możliwość zalogowania się
-- [x] w trakcie przeglądania zawartości - możliwość dodania towaru do koszyka
-- [x] podsumowanie zamówienia z koszyka
-
-Administrator:
-- [x] dodawanie/modyfikacja/usuwanie towarów w sklepie
-- [x] przeglądanie listy użytkowników
-- [ ] przeglądanie listy złożonych/otwartych zamówień
+### My main responsibilities:
+ - implementing the repository pattern 
+ - role-based authorization and user authentication
+ - functionalities on the admin page (adding and removing products to the store page)
+ 
+ ### Tools/languages used:
+ - ejs
+ - CSS
+ - JavaStript
+ - Express
+ - MongoDB
