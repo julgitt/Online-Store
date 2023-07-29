@@ -6,7 +6,7 @@
  - role-based authorization and user authentication
  - functionalities on the admin page (adding and removing products to the store page)
  
- ### Tools/languages used:
+ ### Tools/technologies used:
  - EJS
  - CSS
  - Node.js
