@@ -1,16 +1,14 @@
-var http = require('http');
-var express = require('express');
-var authorizeModule = require('./authorize');
-var authorize = authorizeModule.authorize;
-var mongoose = require('mongoose');
-var cookieParser = require('cookie-parser');
-var route = require('./routes/routes');
-var auth = require('./routes/user');
-var cart = require("./routes/cart.js");
-var Product = require("./models/product");
+const http = require('http');
+const express = require('express');
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const route = require('./routes/routes');
+const auth = require('./routes/user');
+const cart = require('./routes/cart');
+const admin = require('./routes/admin');
 
 
-var app = express();
+const app = express();
 
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb://127.0.0.1/WEPPO', {
@@ -41,31 +39,8 @@ app.use(express.json());
 app.use('/', route);
 app.use('/cart', cart);
 app.use('/', auth);
+app.use('/', admin);
 
-
-// after logout delete user cookie and redirect to home page
-app.get( '/logout', (req, res) => {
-    res.cookie('user', '', { maxAge: -1 } );
-    res.redirect('/');
-});
-
-// login page
-app.get( '/login', (req, res) => {
-    res.render('login');
-});
-
-// search page
-app.get( '/search', authorize(), (req, res) => {
-    res.render('search', {user: req.user});
-});
-
-// search bar
-app.post('/getProducts', async (req, res) => {
-    let payload = req.body.payload;
-    let search = await Product.find({productName: {$regex: new RegExp('^'+payload+'.*', 'i')}}).exec();
-    res.send({payload: search});
-})
 
 http.createServer(app).listen(3000);
-console.log( 'server 3000 is running!\n');
- 
+console.log('server 3000 is running!\n');
