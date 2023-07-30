@@ -5,11 +5,11 @@ const CartController = require("../controllers/cartController");
 const cartCtrl = new CartController();
 const authorize = authorizeModule.authorize;
 
-router.post('/order', authorize(), cartCtrl.orderCart);
-router.post('/:productId', authorize(), cartCtrl.addItemToCart);
+router.get('/order', authorize(), cartCtrl.orderCart);
+router.get('/:productId', authorize(), cartCtrl.addItemToCart);
 router.delete('/delete/:productId', authorize(), cartCtrl.removeItem);
-router.post('/increment/:productId', authorize(), cartCtrl.incrementQuantity);
-router.post('/decrement/:productId', authorize(), cartCtrl.decrementQuantity);
-router.post('/', authorize(), cartCtrl.showCart);
+router.get('/increment/:productId', authorize(), cartCtrl.incrementQuantity);
+router.get('/decrement/:productId', authorize(), cartCtrl.decrementQuantity);
+router.get('/', authorize(), cartCtrl.showCart);
 
 module.exports = router;
