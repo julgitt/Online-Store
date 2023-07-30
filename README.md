@@ -1,5 +1,7 @@
 # Online Store
- The project was carried out in a team of three as part of the course Selected Elements of Software Design Practice. 
+ The project was carried out in a team of three as part of the course Selected Elements of Software Design Practice.
+ 
+ I was working on the backend in the project.
 
 ### My main responsibilities:
  - implementing the repository pattern 
@@ -15,17 +17,17 @@
 
 ## 
 ### Home page:
-![image](https://github.com/julgitt/Online-Store/assets/95649808/edf7cba7-aff2-443d-ac14-563bb45dfcf6)
-![image](https://github.com/julgitt/Online-Store/assets/95649808/ffed6398-c6ec-44a2-985f-2192b1fd10e4)
+![image](https://github.com/julgitt/Online-Store/assets/95649808/bc36232d-c583-4c3f-ab0c-bacf69ed59ed)
+![image](https://github.com/julgitt/Online-Store/assets/95649808/85c1b4e3-a992-4627-9a42-80de625ee966)
 ### Catalog view:
-![image](https://github.com/julgitt/Online-Store/assets/95649808/bb304f35-8b73-4e23-859a-63ec29924944)
-### Sign up view:
-![image](https://github.com/julgitt/Online-Store/assets/95649808/d3abe695-f743-4988-abe3-c00708b6c9b7)
+![image](https://github.com/julgitt/Online-Store/assets/95649808/14f2bcac-6062-4a59-988b-7c49be2093db)
+### Sign in view:
+![image](https://github.com/julgitt/Online-Store/assets/95649808/fa3cbe19-8f63-4102-9932-2bd26b6a4cb7)
 ### Search view:
-![image](https://github.com/julgitt/Online-Store/assets/95649808/7134e07b-11d0-49e3-ace1-8a1e3e033e1c)
+![image](https://github.com/julgitt/Online-Store/assets/95649808/2837e491-6d28-42d1-b3ba-3aec909d5d74)
 ### Cart view
-![image](https://github.com/julgitt/Online-Store/assets/95649808/2b4911c5-b7b5-41c3-be74-e030770da89e)
-![image](https://github.com/julgitt/Online-Store/assets/95649808/2a6b8349-6ec1-4713-8c61-71fafff41998)
+![image](https://github.com/julgitt/Online-Store/assets/95649808/e5041ca2-580a-4c2b-b38f-a9e30f5aa2d7)
 ### Admin dashboard
-![image](https://github.com/julgitt/Online-Store/assets/95649808/5d490b9b-df73-4506-b830-ace69acda769)
-![image](https://github.com/julgitt/Online-Store/assets/95649808/f9c8d710-0571-49e6-8be3-fe91e7caa51d)
+![image](https://github.com/julgitt/Online-Store/assets/95649808/3d1cb60c-107d-4f77-bb64-48542f2afd01)
+![image](https://github.com/julgitt/Online-Store/assets/95649808/0f39e640-1f0d-4844-9f56-f021c32097fe)
+![image](https://github.com/julgitt/Online-Store/assets/95649808/d80ad526-56d0-4b7c-b7d1-9827608c9db6)
